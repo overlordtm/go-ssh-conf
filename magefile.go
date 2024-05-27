@@ -19,5 +19,5 @@ func Clean() error {
 
 func Build() error {
 	fmt.Println("Building the project...")
-	return sh.RunV("go", "build", "-buildvcs=true", "-o", "ssh-conf", "main.go")
+	return sh.RunV("go", "build", "-buildvcs=true", "-o", "ssh-conf")
 }
