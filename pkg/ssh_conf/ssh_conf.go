@@ -72,7 +72,8 @@ func parseDir(targetCfg *ssh_config.Config, dir string) (err error) {
 				} else {
 					cfg, err := parseFile(target)
 					if err != nil {
-						return errors.Join(err, fmt.Errorf("error parsing file %s: %w", target, err))
+						return nil
+						// return errors.Join(err, fmt.Errorf("error parsing file %s: %w", target, err))
 					}
 
 					targetCfg.Hosts = append(targetCfg.Hosts, cfg.Hosts...)
@@ -83,7 +84,8 @@ func parseDir(targetCfg *ssh_config.Config, dir string) (err error) {
 
 		cfg, err := parseFile(path)
 		if err != nil {
-			return errors.Join(err, fmt.Errorf("error parsing file %s: %w", path, err))
+			// return errors.Join(err, fmt.Errorf("error parsing file %s: %w", path, err))
+			return nil
 		}
 
 		targetCfg.Hosts = append(targetCfg.Hosts, cfg.Hosts...)
